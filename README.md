@@ -62,20 +62,28 @@ EXPLANATION FOR definitions.h
 EXPLANATION FOR variables:
 
     -> Seed: for the random numbers;
-    -> Sites: number of sites in the map. Must be an odd number. It happens because I want the same amount of sites in the left and in the right of
-the 0;
+    
+    -> Sites: number of sites in the map. Must be an odd number. It happens because I want the same amount of sites in the left and in the right of the 0;
+    
     -> Is_independent: tells the program if we're talking about dependent (0), or independent (1) walks;
+    
     -> Traps: number of sites that traps the walkers. It's obvious that traps <= sites;
-    -> Mu_time: the average value for time trapping in the traps. If you take a look in the map.c file, you'll see that the distribution of time
-trapping in traps follows an Poisson distribution with mean mu_time;
-    -> Num_walkers: number of walkers. Must be considerable lower than the number of sites. This happens because every walker has an initial position
-different from the others. And, of course, my code for search initial positions is completely lazy and disgusting;
+    
+    -> Mu_time: the average value for time trapping in the traps. If you take a look in the map.c file, you'll see that the distribution of time trapping in traps follows an Poisson distribution with mean mu_time;
+    
+    -> Num_walkers: number of walkers. Must be considerable lower than the number of sites. This happens because every walker has an initial position different from the others. And, of course, my code for search initial positions is completely lazy and disgusting;
+    
     -> Steps: number of steps. Be free to choose, but remember that the map is in an periodic boundary condition. Don't push it too hard;
-    -> Max_resources: is the maximum value for resources that a site can have. If you take a look in the map.c file, you'll see that the distribution
-for resources in sites follows an flat (uniform) distribution from 0 to max_resources;
-    -> Eat_rate: this is the eat per step rate of each walker. For now, all the walkers have the same eat_rate, but we can change this (if you want
-to);
+    
+    -> Max_resources: is the maximum value for resources that a site can have. If you take a look in the map.c file, you'll see that the distribution for resources in sites follows an flat (uniform) distribution from 0 to max_resources;
+    
+    -> Eat_rate: this is the eat per step rate of each walker. For now, all the walkers have the same eat_rate, but we can change this (if you want to);
+    
     -> *average: the reason #1 of my nightmares. This calculates the average site in every step;
+    
     -> *variance: the reason #2 of my nightmares. This calculates the variance in every step;
+    
     -> *map: is a pointer (vector) containing all the sites and characteristics;
+    
     -> *walkers: is a pointer (vector) containing all the walkers, characteristics, and history of walks.
+    
