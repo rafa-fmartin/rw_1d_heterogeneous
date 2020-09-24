@@ -42,14 +42,12 @@ sites, the more it looks like a circumference). Each site is connected to two ot
 
 EXPLANATION FOR definitions.h
 
-    -> Site: every site in map has a position, and an amount of resources available. It can be a trap (when time_trapping > 0). The 'occupied' is just
-for a better controlling in go_walk.c file;
-    -> Walker: every walker has a path (that's pure philosofy) built with steps. The 'is_dead', 'trap_remaining', and 'is_trapped' items helps in the
-go_walk.c file. I know that they all have the same eat per step rate, but if we want to change it in future, we can (for example two, or more,
-different species).
-    -> Step: every step has a (discrete) time and a (discrete) site. The pointer *next tells what's the next step. The *next pointer is NULL if a) the
-walker is dead or b) the walk is over. If *next is different from NULL, it indicates the next step. And yes, here we don't have a vector. We have a
-linked list.
+    -> Site: every site in map has a position, and an amount of resources available. It can be a trap (when time_trapping > 0). The 'occupied' is just for a better controlling in go_walk.c file;
+    
+    -> Walker: every walker has a path (that's pure philosofy) built with steps. The 'is_dead', 'trap_remaining', and 'is_trapped' items helps in the go_walk.c file. I know that they all have the same eat per step rate, but if we want to change it in future, we can (for example two, or more, different species).
+    
+    -> Step: every step has a (discrete) time and a (discrete) site. The pointer *next tells what's the next step. The *next pointer is NULL if a) the walker is dead or b) the walk is over. If *next is different from NULL, it indicates the next step. And yes, here we don't have a vector. We have a linked list.
+    
     -> For higher dimensions, we can implement the struct Coordinates just like that:
         typedef struct Coordinates Coordinates;
         struct Coordinates {
